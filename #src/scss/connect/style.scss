@@ -1,0 +1,32 @@
+@import "mixins";
+
+//<ОБЩИЕ ПАРАМЕТРЫ>=======================
+body {
+	color: $mainColor;
+	background: $backgroundColor;
+	overflow-x: hidden;
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>=================
+
+//<ОБОЛОЧКА>=================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+//</ОБОЛОЧКА>==================
+
+//<ОСНОВНАЯ СЕТКА>===================
+._container {
+	max-width: $maxWidthContainer + px;
+	padding: 0 15px 0 15px;
+	margin: 0 auto;
+}
+//</ОСНОВНАЯ СЕТКА>==================
+
+.svg {
+	// stroke: #0000;
+	// stroke-width: 1px;
+}
+//<ОСНОВНОЙ БЛОК>================

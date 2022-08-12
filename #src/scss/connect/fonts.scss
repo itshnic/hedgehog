@@ -1,0 +1,9 @@
+@import "mixins";
+@include font("icons","icons", "400", "normal");
+@include font("PTSans-Bold","PTSans-Bold", "400", "normal");
+@include font("PTSans-Regular","PTSans-Regular", "400", "normal");
+@include font("WorkSans-Bold","WorkSans-Bold", "400", "normal");
+@include font("WorkSans-ExtraLight","WorkSans-ExtraLight", "400", "normal");
+@include font("WorkSans-Light","WorkSans-Light", "400", "normal");
+@include font("WorkSans-Medium","WorkSans-Medium", "400", "normal");
+@include font("WorkSans-Regular","WorkSans-Regular", "400", "normal");
