@@ -106,7 +106,6 @@ function html() {
 function htmlBuild() {
 	return src(`${path.dev.html}/*.{html,php}`)
 		.pipe(plumber())
-		.pipe(webphtml())
 		.pipe(dest(path.build.html))
 		.pipe(browserSync.stream());
 }

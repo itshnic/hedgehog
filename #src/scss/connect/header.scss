@@ -1,0 +1,370 @@
+@import "mixins";
+
+.header {
+	&__body {
+		background-image: url("../img/FonHeader.png");
+		background-position: top;
+		background-repeat: no-repeat;
+		background-size: 100% 150%;
+		@media (max-width: #{$md1 + px}) {
+			background-position: top;
+			background-size: cover;
+		}
+	}
+}
+
+.top-header {
+	@include adaptiv-value(min-height, 157, 77, 2);
+	@include adaptiv-value(padding-left, 60, 20, 2);
+	@include adaptiv-value(padding-right, 68, 20, 2);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&__menu {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+.icons-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	@media (max-width: #{$md2 + px}) {
+		&__burger {
+			width: 25px;
+			height: 18px;
+			@include adaptiv-value(margin-right, 10, 80, 2);
+			position: relative;
+			z-index: 10;
+			&::after,
+			&::before,
+			& span {
+				position: absolute;
+				left: 0;
+				width: 100%;
+				height: 15%;
+				background: #195557;
+			}
+			&::after {
+				content: "";
+				position: absolute;
+				top: 0;
+			}
+			&::before {
+				content: "";
+				position: absolute;
+				bottom: 0;
+			}
+			& span {
+				position: absolute;
+				top: 50%;
+				transform: scale(1) translate(0px, -50%);
+			}
+			&._is-active {
+				&::after {
+					transition: all 0.3s;
+					top: 50%;
+					transform: rotate(-45deg) translate(0, -65%);
+				}
+				&::before {
+					transition: all 0.3s;
+					bottom: 50%;
+					transform: rotate(45deg) translate(0, 70%);
+				}
+				& span {
+					transition: all 0.5s;
+					transform: scale(0);
+				}
+			}
+		}
+	}
+	&__logo {
+		@include adaptiv-value(font-size, 56, 26, 2);
+		padding-left: 5px;
+		position: relative;
+		z-index: 10;
+	}
+}
+
+.phone-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	@include adaptiv-value(gap, 20, 5, 2);
+	color: #195557;
+	white-space: nowrap;
+	@include adaptiv-value(margin-right, 80, 13, 2);
+	&__icon {
+		@include adaptiv-value(font-size, 26, 13, 1);
+		@include adaptiv-value(height, 69, 35, 2);
+		@include adaptiv-value(width, 69, 35, 2);
+		background: linear-gradient(92.42deg, #b0d3ce -1.96%, #ffedce 92.83%);
+		box-shadow: -4px -4px 20px #ffffff, 4px 4px 20px #cfd7d3;
+		border-radius: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__number {
+		font-family: "Raleway";
+		font-weight: 500;
+		font-size: 22px;
+		line-height: 26px;
+		font-feature-settings: "pnum" on, "lnum" on;
+	}
+}
+
+.basket-header {
+	@include adaptiv-value(font-size, 33, 27, 2);
+	position: relative;
+	&__count {
+		position: absolute;
+		bottom: calc(20 / 33 * 100%);
+		left: calc(26 / 36 * 100%);
+		background: #ffedcd;
+		@include adaptiv-value(width, 19, 13, 2);
+		@include adaptiv-value(height, 19, 13, 2);
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@include adaptiv-value(font-size, 10, 8, 2);
+		@include adaptiv-value(line-height, 12, 9, 2);
+		font-family: "Raleway";
+		font-weight: 700;
+		font-feature-settings: "tnum" on, "lnum" on;
+	}
+}
+.menu-header__catalog {
+	@include adaptiv-value(margin-right, 132, 5, 2);
+	@include adaptiv-value(gap, 90, 0, 2);
+	@media (max-width: #{$md2 + px}) {
+		flex-direction: column;
+		align-items: start;
+		position: absolute;
+		left: -100%;
+		top: 8px;
+		background: #ffffff;
+		box-shadow: 4px 4px 20px #e3e3e3;
+		border-radius: 0px 10px 10px 0px;
+		min-width: 301px;
+		padding: 99px 5px 43px 40px;
+		z-index: 5;
+	}
+	@media (max-width: #{$md3 + px}) {
+		gap: 20px;
+	}
+	@media (max-width: #{$md2 + px}) {
+		& ._menu__catalog {
+			& .select__body {
+				position: static;
+				box-shadow: none;
+				border-radius: none;
+				& .select__list {
+					padding: 15px 0 0 5px;
+				}
+			}
+		}
+	}
+	& ._menu__list {
+		@include adaptiv-value(gap, 90, 0, 2);
+		@media (max-width: #{$md2 + px}) {
+			flex-direction: column;
+			margin-bottom: 161px;
+		}
+		@media (max-width: #{$md3 + px}) {
+			gap: 20px;
+		}
+	}
+}
+._color-header {
+	& a {
+		color: #195557;
+	}
+}
+.content-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 0 20px;
+	@include adaptiv-value(margin-bottom, 127, 48, 2);
+	@media (max-width: #{$md4 + px}) {
+		text-align: left;
+	}
+
+	&__title {
+		width: 100%;
+		@include adaptiv-value(height, 95, 44, 2);
+		@include adaptiv-value(width, 444, 202, 2);
+		@include adaptiv-value(margin-bottom, 19, 12, 2);
+		@media (max-width: #{$md4 + px}) {
+			align-self: start;
+		}
+	}
+
+	&__subtitle {
+		width: 100%;
+		font-weight: 400;
+		@include adaptiv-value(font-size, 50, 24, 1);
+		@include adaptiv-value(line-height, 61, 29, 1);
+		text-transform: uppercase;
+		color: #70908b;
+		@include adaptiv-value(margin-bottom, 18, 7, 2);
+	}
+
+	&__text {
+		font-family: "Raleway";
+		font-weight: 400;
+		@include adaptiv-value(font-size, 14, 12, 1);
+		line-height: 16px;
+		color: #70908b;
+		@include adaptiv-value(margin-bottom, 34, 10, 2);
+	}
+
+	&__btn {
+	}
+}
+
+.body-header {
+	&__top {
+		@include adaptiv-value(margin-bottom, 107, 12, 2);
+		position: relative;
+	}
+	&__bottom {
+		position: relative;
+	}
+
+	&__img {
+		position: absolute;
+		display: flex;
+		align-items: end;
+		&:first-child {
+			left: 0;
+			bottom: calc(60px - (120 + 60) * (100vw - 320px) / (1920 - 320));
+			@media (max-width: #{$md1 + px}) {
+				display: none;
+			}
+
+			& img {
+				@include adaptiv-value(height, 565, 200, 2);
+				@include adaptiv-value(width, 457, 200, 2);
+			}
+		}
+		&:last-child {
+			right: 0;
+			bottom: calc(10px - (86 + 10) * (100vw - 320px) / (1920 - 320));
+			@media (max-width: #{$md3 + px}) {
+				top: -30px;
+				bottom: auto;
+			}
+			& img {
+				@include adaptiv-value(height, 331, 203, 1);
+				@include adaptiv-value(width, 326, 207, 1);
+			}
+		}
+	}
+
+	&__info {
+	}
+}
+.info-header {
+	display: flex;
+	justify-content: space-between;
+	align-self: center;
+	gap: 20px;
+	@include adaptiv-value(width, 874, 280, 2);
+	@media (max-width: #{$md1 + px}) {
+		flex-wrap: wrap;
+	}
+	@media (max-width: #{$md4 + px}) {
+		width: 95%;
+	}
+
+	&__wrap {
+		@include adaptiv-value(width, 191, 120, 1);
+		text-align: center;
+		@media (max-width: #{$md3 + px}) {
+			text-align: left;
+		}
+	}
+	&__icon {
+		display: flex;
+		align-items: end;
+		@media (max-width: #{$md1 + px}) {
+			align-items: start;
+		}
+
+		&:first-child {
+			@media (max-width: #{$md3 + px}) {
+				flex: 1 1 100%;
+			}
+			& .info-header__img {
+				background: #ffedcd;
+				& img {
+					@include adaptiv-value(height, 72, 44, 2);
+					@include adaptiv-value(width, 72, 44, 2);
+				}
+			}
+		}
+		&:nth-child(2) {
+			& .info-header__img {
+				background: #e2f0df;
+				& img {
+					@include adaptiv-value(height, 46, 43, 2);
+					@include adaptiv-value(width, 46, 43, 2);
+				}
+			}
+		}
+		&:last-child {
+			@media (max-width: #{$md1 + px}) {
+				flex: 1 1 100%;
+			}
+			@media (max-width: #{$md3 + px}) {
+				flex: 0 1 auto;
+			}
+			& .info-header__img {
+				background: #70908b;
+				border: 1px solid #94afab;
+				& img {
+					@include adaptiv-value(height, 43, 27, 2);
+					@include adaptiv-value(width, 43, 27, 2);
+				}
+			}
+		}
+	}
+
+	&__img {
+		margin: 0 auto;
+		@media (max-width: #{$md3 + px}) {
+			margin: 0;
+		}
+
+		width: calc(92px + (152 - 92) * (100vw - 320px) / (1920 - 320));
+		height: calc(92px + (152 - 92) * (100vw - 320px) / (1920 - 320));
+		border-radius: 50%;
+		box-shadow: 4px 4px 20px #c2ccca, -8px -8px 20px #ffffff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__title {
+		@include adaptiv-value(margin-top, 30, 18, 2);
+		@include adaptiv-value(margin-bottom, 8, 5, 1);
+		@include adaptiv-value(font-size, 16, 14, 1);
+		@include adaptiv-value(line-height, 19, 17, 1);
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	&__text {
+		font-family: "Raleway";
+		@include adaptiv-value(font-size, 14, 10, 1);
+		@include adaptiv-value(line-height, 22, 15, 1);
+	}
+}

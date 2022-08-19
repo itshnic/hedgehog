@@ -1,9 +1,8 @@
 @import "mixins";
+@include font("CormorantInfant", "CormorantInfant-Bold", "700", "normal");
+@include font("CormorantInfant", "CormorantInfant-Regular", "400", "normal");
 @include font("icons", "icons", "400", "normal");
-@include font("PTSans", "PTSans-Bold", "700", "normal");
-@include font("PTSans", "PTSans-Regular", "400", "normal");
-@include font("WorkSans", "WorkSans-Bold", "700", "normal");
-@include font("WorkSans", "WorkSans-ExtraLight", "200", "normal");
-@include font("WorkSans", "WorkSans-Light", "300", "normal");
-@include font("WorkSans", "WorkSans-Medium", "500", "normal");
-@include font("WorkSans", "WorkSans-Regular", "400", "norma");
+@include font("Raleway", "Raleway-Bold", "700", "normal");
+@include font("Raleway", "Raleway-Medium", "500", "normal");
+@include font("Raleway", "Raleway-Regular", "400", "normal");
+@include font("Roboto", "Roboto-Regular", "400", "normal");

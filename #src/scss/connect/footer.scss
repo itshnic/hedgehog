@@ -1,0 +1,123 @@
+@import "mixins";
+
+.footer {
+	background: #70908b;
+	&__container {
+		@include adaptiv-value(padding-left, 60, 20, 2);
+		@include adaptiv-value(padding-right, 60, 20, 2);
+		@include adaptiv-value(padding-top, 49, 35, 2);
+		@include adaptiv-value(padding-bottom, 30, 35, 2);
+		color: #ffffff;
+	}
+}
+.body-footer {
+	&__copyright {
+		font-family: "Raleway";
+		@include adaptiv-value(font-size, 9, 11, 2);
+		line-height: 13px;
+	}
+}
+.content-footer {
+	display: flex;
+	position: relative;
+	justify-content: space-between;
+	@media (max-width: #{$md2 + px}) {
+		flex-direction: column;
+	}
+
+	&__logo {
+		font-size: 56px;
+		margin-bottom: 24;
+		@media (max-width: #{$md3 + px}) {
+			margin-bottom: 62px;
+		}
+	}
+}
+._color-footer {
+	& a {
+		color: #ffff;
+	}
+}
+.menu-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	@media (max-width: #{$md3 + px}) {
+		flex-direction: column;
+		align-items: start;
+	}
+
+	&__menu {
+		@include adaptiv-value(margin-right, 99, 0, 2);
+		@include adaptiv-value(gap, 91, 30, 2);
+		@media (max-width: #{$md3 + px}) {
+			flex-direction: column;
+			margin-bottom: 54px;
+		}
+		& ._menu__list {
+			@include adaptiv-value(gap, 91, 30, 2);
+			@media (max-width: #{$md3 + px}) {
+				flex-direction: column;
+			}
+		}
+		@media (max-width: #{$md3 + px}) {
+			& ._menu__catalog {
+				& .select__body {
+					position: static;
+					box-shadow: none;
+					border-radius: none;
+					background: none;
+					& .select__list {
+						color: #ffff;
+						padding: 15px 0 0 5px;
+					}
+				}
+			}
+		}
+	}
+}
+.select__body {
+	&._position {
+		top: auto;
+		bottom: 180%;
+	}
+}
+.icons-footer {
+	display: flex;
+	justify-content: space-between;
+	gap: 12px;
+	@include adaptiv-value(margin-right, 71, 0, 2);
+	@media (max-width: #{$md3 + px}) {
+		position: absolute;
+		top: 0;
+		right: 0;
+		flex-direction: column;
+	}
+
+	&__item {
+		font-size: 40px;
+	}
+}
+.contacts-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	@media (max-width: #{$md1 + px}) {
+		flex-direction: column;
+		align-items: start;
+		gap: 10px;
+	}
+
+	&__phone {
+		font-family: "Raleway";
+		color: #ffff;
+		font-weight: 500;
+		font-size: 22px;
+		line-height: 26px;
+		text-transform: uppercase;
+		font-feature-settings: "tnum" on, "lnum" on;
+		@media (max-width: #{$md3 + px}) {
+			margin-bottom: 34px;
+		}
+	}
+}

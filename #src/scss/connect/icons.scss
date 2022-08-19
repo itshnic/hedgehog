@@ -16,21 +16,40 @@
 		display: block;
 	}
 }
-
-._icon-check:before {
+._icon-heart-border:before {
 	content: "\e900";
+	color: #195557;
 }
-._icon-check-mail:before {
+._icon-info-circle:before {
 	content: "\e901";
-	color: #5a61ed;
 }
-._icon-eye:before {
-	content: "\e9ce";
-	font-size: 12px;
-	cursor: pointer;
+._icon-basket:before {
+	content: "\e902";
 }
-._icon-eye-blocked:before {
-	content: "\e9d1";
-	font-size: 12px;
-	cursor: pointer;
+._icon-phone:before {
+	content: "\e903";
+}
+._icon-plus:before {
+	content: "\e904";
+}
+._icon-syringe-solid:before {
+	content: "\e905";
+}
+._icon-Logo:before {
+	content: "\e906";
+}
+._icon-triangular:before {
+	content: "\e907";
+}
+._icon-facebook:before {
+	content: "\e908";
+}
+._icon-instagram:before {
+	content: "\e909";
+}
+._icon-twitter:before {
+	content: "\e90a";
+}
+._icon-arrow:before {
+	content: "\e90b";
 }
