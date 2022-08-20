@@ -41,3 +41,21 @@ const swiper = new Swiper(".swiper", {
 		},
 	},
 });
+
+const overflow = function () {
+	const swiper = document.querySelector(".swiper");
+	// swiper.style.overflow = "visible";
+	swiper.style.marginRight = "-40px";
+	swiper.style.marginLeft = "-40px";
+	swiper.style.paddingLeft = "40px";
+	swiper.style.paddingRight = "40px";
+	window.addEventListener("resize", () => {
+		if (window.innerWidth < 1270) {
+			swiper.style.marginRight = "";
+			swiper.style.marginLeft = "";
+			swiper.style.paddingLeft = "";
+			swiper.style.paddingRight = "";
+		}
+	});
+};
+overflow();
